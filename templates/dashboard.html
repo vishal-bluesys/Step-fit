@@ -1,0 +1,204 @@
+<ion-view view-title="Dashboard" align-title="left">
+    <ion-content >
+	  <walkthrough
+            wid="Demo1"
+            walkthrough-type="transparency"
+            focus-element-selector="#focus-item"
+            icon="img/icons/single_tap.png"
+            main-caption="{{demoCaption1}}"
+            icon-padding-left="0"
+            icon-padding-top="20"
+            is-active="demoActive1">
+      </walkthrough>
+	   <walkthrough
+            wid="Demo2"
+            walkthrough-type="transparency"
+            focus-element-selector="#focus-item1"
+            icon="img/icons/single_tap.png"
+            main-caption="{{demoCaption2}}"
+            icon-padding-left="0"
+            icon-padding-top="20"
+            is-active="demoActive2">
+      </walkthrough> 
+	  <walkthrough
+            wid="Demo3"
+            walkthrough-type="transparency"
+            focus-element-selector="#focus-item_goals"
+            icon="img/icons/single_tap.png"
+            main-caption="{{demoCaption3}}"
+            icon-padding-left="0"
+            icon-padding-top="20"
+            is-active="demoActive3">
+      </walkthrough>
+	   <walkthrough
+            wid="Demo4"
+            walkthrough-type="transparency"
+            focus-element-selector="#focus-item_groups"
+            icon="img/icons/single_tap.png"
+            main-caption="{{demoCaption4}}"
+            icon-padding-left="0"
+            icon-padding-top="20"
+            is-active="demoActive4">
+      </walkthrough>
+     
+   <p style="display:none">{{loadComplete()}}</p>
+    <p style="display:none">{{loadfunc()}}</p>
+       <div class="dashboardheader row">
+            <div class="col col-50">
+                <onezone-datepicker datepicker-object="onezoneDatepicker">
+                    <div  class="show-onezone-datepicker">
+                                {{onezoneDatepicker.date | date:'dd MMMM '}} <i class="icon ion-arrow-down-b"></i>
+                    </div>
+                </onezone-datepicker>
+            </div>
+            <!-- <div class="col"></div> -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col headericon wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"><i class="icon ion-android-textsms hearticon"></i></div>
+            <!--<div class="col headericon"><i class="icon ion-ios-settings-strong" ng-click="openPopover()"></i></div>-->
+       </div>
+      <!-- <div class="row newgradient">
+         <div class="canvasscoreircle">
+              <div class="totatstepscountinsidemetere">{{stepPercentage}}</div><!-- Add total Step count here -->
+          <!--    <div class="GaugeMeter" id="PreviewGaugeMeter_4" data-percent="50" data-size="170" data-theme="White" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors="1" data-animate_text_colors="1" data-width="15" data-label="Percentage" data-label_color="#0000" data-stripe="3"></div>
+          </div>
+       </div> -->
+	   <div class="row " style="padding-bottom: 20px; background: whitesmoke;">
+         <div class="col ">
+         <div class="canvasscoreirclenew">
+             <div class="totatstepscountinsidemeterenew">{{goalSteps}} % <br><span class="belowcirleline">Todays Goal is {{todaysGoal}}</span></div>
+		<div class="forth circless"></div>
+          </div>
+          </div>
+          <!-- <div class="col col-50">
+            <div class="canvasscoreirclenew">  
+              <div class="totatstepscountinsidemeterenew" style="color:#a43723;">90 Km<br><span class="belowcirleline">Todays goal 3000 steps</span></div>
+               <div class="forth1 circless"></div>
+            </div>   
+          </div> -->
+       </div> 
+        <!--<div class="row middlepartofdashboard">
+        <div class="col">
+          <div class="title-category1">Calories</div>
+         
+          <div class="score textorange">{{calories | number:2}}</div>
+        </div>
+        <div class="col">
+          <div class="title-category1">Steps</div>
+          <div class="score textgreen">{{stepCount}}</div>         
+        </div>
+        <div class="col">
+          <div class="title-category1">Km</div>
+          <div class="score textblue">{{distance | number:2}}</div>         
+        </div>
+       </div>-->
+	   <div class="row newlayoutsections" style="border-top: 1px solid whitesmoke;
+    margin-top: 0;">
+        <div class="col col-33 newlayoutsections1">
+          <div class="leftnewsection"><img src="img/steps.png" class="newiconlayout"></div>
+          <div class="rightnewsection">
+            <div class="title-category1new">Steps</div>
+           <!-- <div class="score textorange counter">900</div> -->
+            <div class="scorenew textgreennew ">{{stepCount}}</div>
+          </div>  
+        </div>
+        <div class="col col-33 newlayoutsections2" style="border-right: 1px solid whitesmoke;">
+          <div class="leftnewsection"><img src="img/distance.png" class="newiconlayout"></div>
+          <div class="rightnewsection">
+            <div class="title-category1new">Km</div>
+           <!-- <div class="score textorange counter">900</div> -->
+            <div class="scorenew textgreennew ">{{distance | number:2}}</div>
+          </div>
+        </div>
+         <div class="col col-33 newlayoutsections3">
+          <div class="leftnewsection"><img src="img/calories.png" class="newiconlayout"></div>
+          <div class="rightnewsection">
+            <div class="title-category1new">Calories</div>
+           <!-- <div class="score textorange counter">900</div> -->
+            <div class="scorenew textgreennew ">{{calories | number:2}}</div>
+          </div>
+
+        </div>
+       </div> 
+       <!-- <div class="greybox"></div>  -->
+	    <!--<button type="button" ng-click="focus1()">1</button>
+			<button type="button" ng-click="focus2()">2</button>
+	     <button type="button" ng-click="focus3()">3</button>
+	     <button type="button" ng-click="focus4()">4</button>-->
+		 <div class="row">
+         <div class="dashboard-activitybutton" ui-sref="app.newactivity">Start Activity</div>
+      </div>
+       <div class="row dashboardchart">
+          <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="colors">
+          </canvas>
+       </div>
+	     
+       <div class="greybox"></div> 
+       <div class="row">
+          <div class="trendinggrouph title-category1">Top 3 Trending Group</div>
+       </div>
+       <div class="row">
+             <div id="" class="col " ng-repeat="group in groupsList">
+                <div class="items" >
+                    <div class="circle-image" >
+						<img ng-src="{{group.img_path == '' ? 'img/user.png' : group.img_path}}" />
+					</div>
+                    <div class="groupscore">20 Km</div>
+                    <div class="groupname">{{group.grp_name}}</div>
+                </div>
+            </div>  
+       </div>
+       <style type="text/css">
+         .GaugeMeter span{display: none;}
+         .totatstepscountinsidemetere{position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    font-size: 25px;
+    height: 30px;
+    font-size: 27px;
+    font-weight: bold;
+    color: white;}
+    .canvasscoreircle{position: relative;}
+       </style>
+	   
+    </ion-content>
+    <ion-footer-bar align-title="left" class="footernew">
+      <!--<a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Me
+      </a>-->
+		 
+	  <a  id="focus-item" class="tab-item listfooter "> <!--ui-sref="app.me"-->
+        <i class="icon ion-person" ng-click="gototrends()"></i>
+        Profile
+      </a>
+      <a  id="focus-item1" class="tab-item listfooter ">  <!--ui-sref="app.trends"-->
+        <i class="icon ion-stats-bars" ng-click="goto_goals()"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter " id="focus-item_goals"  > <!--ui-sref="app.goals"-->
+        <i class="icon ion-checkmark-circled" ng-click="goto_grps()"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" id="focus-item_groups"  class="tab-item listfooter"> 
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>

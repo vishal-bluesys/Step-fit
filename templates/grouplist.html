@@ -1,0 +1,109 @@
+<ion-view view-title="Group List">
+    <ion-content class="grouplistpage-container fadeSlideInRight">
+        <div class="newdashboard2-main2"> 
+        <div class="dashboardheader row">
+            <div class="col col-50">
+                <div class="header-text">Group List</div>
+            </div>
+            <!-- <div class="col"></div> -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+             <div class="col headericon wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"><i class="icon ion-android-textsms hearticon"></i></div>
+           <!-- <div class="col headericon"><i class="icon ion-ios-settings-strong"></i></div>-->
+       </div>
+       </div>
+        <div class="searchboar">
+              <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search Group">
+                </label>
+              </div>  
+        </div>
+        <div class="list removebottommargin" >
+            <a class="item item-avatar admingroup" ng-repeat="group in AdminGroup" ng-click="groupDetail(this)">
+              <img ng-src="{{group.img_path == '' ? 'img/user.png' : group.img_path}}" >
+              <!-- <div class="achivement">10K</div> -->
+               <h2>{{group.grp_name}} <div class="member-container"><i class="icon ion-person-stalker"></i> {{group.user_count}}</div></h2>
+              <p>{{group.short_desc}}</p>
+            </a>
+        </div>    
+        <div class="borderclasstitle">
+            <div class="titless">My Groups</div>
+        </div>
+        <div class="list removebottommargin" >
+            <a class="item item-avatar" ng-repeat="group in groupsList | filter:test" ng-click="groupDetail(this)">
+              <img ng-src="{{group.img_path == '' ? 'img/user.png' : group.img_path}}" >
+              <!--<div class="achivement">10K</div>-->
+              <h2>{{group.grp_name}} <div class="member-container"><i class="icon ion-person-stalker"></i> {{group.user_count}}</div></h2>
+              <p>{{group.short_desc}}</p>
+            </a>
+           <!-- <a class="item item-avatar" >
+              <img src="img/material2.jpg">
+              <div class="achivement">10K</div>
+              <h2>Venkman <div class="member-container"><i class="icon ion-person-stalker"></i> 10</div></h2>
+              <p>Back off, man. I'm a scientist. Back off, man. I'm a scientist.</p>
+            </a>-->
+        </div>
+        <div class="creategroup"  ui-sref="app.creategroup" ng-show="group.create_group"><i class="icon ion-plus-circled"></i>Create Groups</div><!--  -->
+        <div class="borderclasstitle">
+            <div class="titless">Top 3 Groups</div>
+        </div>
+        <div class="list" >
+            <a class="item item-avatar" ng-repeat="group in topTenGroup | filter:test">
+              <img ng-src="{{group.img_path == '' ? 'img/user.png' : group.img_path}}" >
+              
+              <h2>{{group.grp_name}} <div class="member-container"><i class="icon ion-person-stalker"></i> {{group.user_count}}</div></h2>
+              <p>{{group.short_desc}}</p>
+            </a><!--
+            <a class="item item-avatar" >
+              <img src="img/material2.jpg">
+              <div class="achivement">10K</div>
+              <h2>Venkman <div class="member-container"><i class="icon ion-person-stalker"></i> 10</div></h2>
+              <p>Back off, man. I'm a scientist. Back off, man. I'm a scientist.</p>
+            </a>
+             <a class="item item-avatar" >
+              <img src="img/material3.jpg">
+              <div class="achivement">10K</div>
+              <h2>Venkman <div class="member-container"><i class="icon ion-person-stalker"></i> 10</div></h2>
+              <p>Back off, man. I'm a scientist. Back off, man. I'm a scientist.</p>
+            </a>
+             <a class="item item-avatar" >
+              <img src="img/material4.jpg">
+              <div class="achivement">10K</div>
+              <h2>Venkman <div class="member-container"><i class="icon ion-person-stalker"></i> 10</div></h2>
+              <p>Back off, man. I'm a scientist. Back off, man. I'm a scientist.</p>
+            </a> -->
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="footernew">
+      <a ui-sref="app.viewprofile" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Profile
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter" ui-sref="app.goals">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>

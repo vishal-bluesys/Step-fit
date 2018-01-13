@@ -1,0 +1,25 @@
+<ion-view view-title="Login" align-title="left"  ng-controller="LoginCtrl">
+    <div class="background"></div>
+    <ion-content class="background" ><!-- style="background: url(img/1.jpg) center; background-size: cover;" -->
+        <div class="hero no-header flat">
+            <div class="content">
+                <img src="img/logo.png" class="logo-login">
+               <!--  <i class="shiny"></i> -->
+            </div>
+        </div>
+		<p class="message-box" ng-bind-html="validationError"></p>
+        <div class="list loginlist">
+            <ion-md-input placeholder="{{Username_placeholder}}" highlight-color="balanced" type="text" ng-model="user.username"></ion-md-input>
+            <ion-md-input placeholder="{{Password_placeholder}}" highlight-color="energized" type="password" ng-model="user.password"></ion-md-input>
+        </div>
+        <div class="padding">
+            <button ng-click="login()" class="button button-full button-assertive ink">Login</button>
+        </div>
+        <div class="forgotpassword">Forgot Password ?</div>
+      <!--   <div class="button-bar social-login">
+            <button class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>
+            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+        </div> -->
+    </ion-content>
+</ion-view>

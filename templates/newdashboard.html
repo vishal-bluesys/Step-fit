@@ -1,0 +1,161 @@
+<ion-view view-title="Dashboard" align-title="left">
+    <ion-content >
+    <p style="display:none">{{loadfunc()}}</p>
+       <div class="dashboardheader row">
+            <div class="col col-50">
+                <onezone-datepicker datepicker-object="onezoneDatepicker">
+                    <div  class="show-onezone-datepicker">
+                                {{onezoneDatepicker.date | date:'dd MMMM '}} <i class="icon ion-arrow-down-b"></i>
+                    </div>
+                </onezone-datepicker>
+            </div>
+            <!-- <div class="col"></div> -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col headericon wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"><i class="icon ion-android-textsms hearticon"></i></div>
+            <!--<div class="col headericon"><i class="icon ion-ios-settings-strong" ng-click="openPopover()"></i></div>-->
+       </div>
+	  <!--  <div ng-click = "showData()">
+		Click to see logs
+	   </div> -->
+       <div class="row " style="    padding-bottom: 20px;
+    background: whitesmoke;">
+         <div class="col col-50">
+         <div class="canvasscoreirclenew">
+             <div class="totatstepscountinsidemeterenew">90 <br><span class="belowcirleline">Todays goal 3000 steps</span></div><!-- Add total Step count here -->
+              <!-- <div class="GaugeMeter" id="PreviewGaugeMeter_4" data-percent="50" data-size="170" data-theme="White" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors="1" data-animate_text_colors="1" data-width="15" data-label="Percentage" data-label_color="#0000" data-stripe="3"></div> -->
+               <!-- <input type="text" value="90" class="dial" data-readOnly="true" data-width="170" data-height="170" data-displayInput="false"
+    data-fgColor="#ffffff"
+    data-bgColor="#909090"
+    data-skin="tron"
+    data-thickness=".2"
+    data-angleOffset="180"> <br><br> -->
+    <div class="forth circless"></div>
+          </div>
+          </div>
+          <!-- <div class="col col-50">
+            <div class="canvasscoreirclenew">  
+              <div class="totatstepscountinsidemeterenew" style="color:#a43723;">90 Km<br><span class="belowcirleline">Todays goal 3000 steps</span></div>
+               <div class="forth1 circless"></div>
+            </div>   
+          </div> -->
+       </div> 
+       <div class="row newlayoutsections" style="border-top: 1px solid whitesmoke;
+    margin-top: 0;">
+        <div class="col col-50 newlayoutsections1">
+          <div class="leftnewsection"><img src="img/steps.png" class="newiconlayout"></div>
+          <div class="rightnewsection">
+            <div class="title-category1new">Steps</div>
+           <!-- <div class="score textorange counter">900</div> -->
+            <div class="scorenew textgreennew ">7290</div>
+          </div>  
+        </div>
+        <div class="col col-50 newlayoutsections2">
+          <div class="leftnewsection"><img src="img/distance.png" class="newiconlayout"></div>
+          <div class="rightnewsection">
+            <div class="title-category1new">Distance</div>
+           <!-- <div class="score textorange counter">900</div> -->
+            <div class="scorenew textgreennew ">22</div>
+          </div>
+        </div>
+       </div> 
+       <div class="row newlayoutsections" style="margin: 0 0 10px;"> 
+       <div class="col col-50 newlayoutsections3">
+          <div class="leftnewsection"><img src="img/calories.png" class="newiconlayout"></div>
+          <div class="rightnewsection">
+            <div class="title-category1new">Calories</div>
+           <!-- <div class="score textorange counter">900</div> -->
+            <div class="scorenew textgreennew ">22</div>
+          </div>
+
+        </div>
+        <div class="col col-50 newlayoutsections4">
+           <div class="leftnewsection"><img src="img/pace.png" class="newiconlayout"></div>
+           <div class="rightnewsection">
+            <div class="title-category1new">Pace</div>
+           <!-- <div class="score textorange counter">900</div> -->
+            <div class="scorenew textgreennew ">10</div>
+          </div> 
+        </div>
+       </div> 
+       <!-- <div class="greybox"></div>  -->
+       <!-- <div class="row dashboardchart">
+          <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick" chart-colors="colors">
+          </canvas>
+       </div>
+       <div class="greybox"></div> -->
+       <div class="row">
+          <div class="trendinggrouph title-category1">Top 3 Trending Group</div>
+       </div>
+       <div class="row">
+             <div id="owl-example2" class="owl-carousel2">
+                <div class="items">
+                    <div class="circle-image"><img src="img/jon-snow.jpg"></div>
+                    <div class="groupscore">20 Km</div>
+                    <div class="groupname">Need No Speed</div>
+                </div>
+                <div class="items">
+                    <div class="circle-image"><img src="img/jon-snow.jpg"></div>
+                    <div class="groupscore">20 Km</div>
+                    <div class="groupname">Need No Speed</div>
+                </div>
+                <div class="items">
+                    <div class="circle-image"><img src="img/jon-snow.jpg"></div>
+                    <div class="groupscore">20 Km</div>
+                    <div class="groupname">Need No Speed</div>
+                </div>
+                
+              </div>  
+       </div> 
+       <style type="text/css">
+         .GaugeMeter span{display: none;}
+         .totatstepscountinsidemetere{position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    font-size: 25px;
+    height: 30px;
+    font-size: 27px;
+    font-weight: bold;
+    color: white;}
+    .canvasscoreircle{position: relative;}
+       </style>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="footernew">
+      <!--<a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Me
+      </a>-->
+	  <a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Profile
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter"  ui-sref="app.goals">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>

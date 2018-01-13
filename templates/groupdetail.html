@@ -1,0 +1,58 @@
+<ion-view view-title="{{group_data.grp_name}}">
+    <ion-content class="groupdetail-container">
+       
+    <div class="coverpic" style="background: url(./img/AppFirstpage01.png); background-size: 100%;background-repeat: no-repeat;">
+     
+	  <div class="uploadprofilepic" style="padding:0;background-size: cover; margin-top: 16px;"> <img ng-src="{{group_data.img_path == '' ? './img/group.jpg' : group_data.img_path}}" /></div>
+       <div class="grouprankingdetail"><span>Rank </span>1</div>
+       <!--<div class="editprofilelink">12210 Steps</div>-->
+	   <div ng-show="group.showOperations">
+      <div class="viewprofilenewbuttonedit" ng-show="group.showEdit" id="editGroup" ng-click="editGroup()">Edit Group</div>
+      <div class="viewprofilenewbuttoneditpassword" ng-show="group.showEdit" ng-click="deleteGroup()" >Delete Group</div>
+      <div class="viewprofilenewbuttoneditpassword" ng-hide="group.showEdit" ng-click="leaveGroup()">Leave Group</div>
+	  </div>
+    <div class="viewprofile-detailsnewchange" style="width: 100%;">
+          <div class="viewprofile-detailsnewchange-name">{{group_data.grp_name}}</div>
+          <div class="viewprofile-detailsnewchange-decribtion">{{group_data.short_desc}}</div>
+      </div>
+    </div>
+     <!--  <div class="list" style="margin-top: 10px;">
+        <p class="groupdetaildesc">{{group_data.short_desc}}</p>
+      </div> -->
+      <div class="borderclasstitle">
+            <div class="titless">Groups Members</div>
+        </div>
+        <div class="list" >
+			
+            <a class="item item-avatar" ng-repeat="user in userList | filter:test">
+              <img ng-src="{{user.img_path == '' ? 'img/user.png' : user.img_path}}">
+              <h2>{{user.first_name}} {{user.last_name}} </h2>
+              <p>{{user.short_desc}}</p>
+			  <div class="member-containerviewprofile"><div class="steps">{{user.stepCount}}</div><div class="distance">{{user.distanceCount | number : 2}}Km</div></div>
+            </a>
+           <!-- <a class="item item-avatar" >
+              <img src="img/material2.jpg">
+              <h2>Venkman <div class="member-container">1,030 Km</div></h2>
+              <p>Back off, man. I'm a scientist. Back off, man. I'm a scientist.</p>
+            </a>
+             <a class="item item-avatar" >
+              <img src="img/material3.jpg">
+              <!-- <div class="achivement">10K</div> 
+              <h2>Venkman <div class="member-container">1,010 Km</div></h2>
+              <p>Back off, man. I'm a scientist. Back off, man. I'm a scientist.</p>
+            </a>
+             <a class="item item-avatar" >
+              <img src="img/material4.jpg">
+               <div class="achivement">10K</div>
+              <h2>Venkman <div class="member-container">1,000 Km</div></h2>
+              <p>Back off, man. I'm a scientist. Back off, man. I'm a scientist.</p>
+            </a> -->
+        </div>
+
+    </ion-content>
+   <!-- <ion-footer-bar align-title="left" class="footernew">
+      <button class="button button-full button-positive" style="max-width: 100%; width: 100%; background-color: #ff7309;">
+  Join Now
+</button>
+    </ion-footer-bar> -->
+</ion-view>

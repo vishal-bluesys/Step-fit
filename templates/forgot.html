@@ -1,0 +1,18 @@
+<ion-view view-title="Forgot" ng-controller="Forgotctrl">
+     <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+  <ion-content class="padding">
+   <div>
+		<form name="forgotform" ng-submit="submit()" novalidate>
+        <p ng-bind-html="validationError" class="message-box"></p>
+        <div class="list forgot_Fields">		
+			<input name="userEmail" type="email" class="login_text inputbox" ng-model="user.email" placeholder="Enter Your Email Id" required>
+			<div ng-messages="forgotform.userEmail.$error" ng-show="forgotform.userEmail.$touched">
+				  <div class="form-error" ng-message="email">Your email address is invalid</div>
+			</div>
+			<button ng-disabled="forgotform.$invalid" ui-sref="app.login" class="button button-full login_btn ink">Submit</button>
+		</div>
+		</form>
+    </div>
+    </ion-content>    
+</ion-view>

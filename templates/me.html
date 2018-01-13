@@ -1,0 +1,162 @@
+<ion-view view-title="Me">
+    <ion-content class="me-container">
+        <div class="dashboardheader row">
+            <div class="col col-33">
+                <div class="header-text">Me</div>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col headericon wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"  ui-sref="app.notificationlist"><i class="icon ion-android-textsms hearticon"></i></div>
+            <!-- <div class="col headericon"><i class="icon ion-ios-settings-strong" ng-click="openPopover()"></i></div> -->
+       </div>
+       <div class="coverpic" style="background:url(./img/material-graphite.jpg);">
+          <div class="profilepicinprofile" style="background:url({{user.img_path == '' ? './img/daenerys.jpg' : user.img_path}});padding:0;background-size: cover;"></div>
+
+          <div class="nameinprofile">Parag</div>
+          <div class="editprofilelink" ui-sref="app.viewprofile" >View Info</div>
+        </div>
+       <!--<div class="greybox"></div>
+       <div class="list removebottommargin wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; -webkit-animation-delay: 0.1s; -moz-animation-delay: 0.1s; animation-delay: 0.1s;">
+            <a class="item item-avatar" style="padding-bottom: 31px;border-bottom: 0;">
+              <img src="img/arya.jpg" />
+              <h2>Parag Toprani </h2>
+              <p>Parag ID : ICICI999362763</p>
+            </a>
+       </div>
+       <div class="greybox"></div>  -->
+       <div class="row wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; -webkit-animation-delay: 0.1s; -moz-animation-delay: 0.1s; animation-delay: 0.1s;"> 
+	   
+			<h1 class="title"></h1>
+	    <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide items">
+                  <div class="title-category1 slidernew"><b>Most Steps In Day</b></div>
+                  <div class="row">  
+                     <div class="col"> 
+                      <div class="subtitle">28 September 2016</div>
+                     </div> 
+                     <div class="col">
+                       <div class="count-slider">167</div>
+                     </div>
+                  </div>
+                  <div class="row">   
+                      <canvas id="base" class="chart-bar"
+                          chart-data="data3" chart-labels="labels3" chart-colors="colors"
+                          chart-dataset-override="datasetOverride" >
+                      </canvas> 
+                  </div>  
+               </div>
+              <div class="swiper-slide items">
+                  <div class="title-category1 slidernew">My Average Day</div>
+                  <div class="row">  
+                     <div class="col"> 
+                        <div class="subtitle">Average Daily Steps</div>
+                        
+                      </div>
+                      <div class="col">
+                          <div class="count-slider">40</div>
+                     </div>
+                  </div>    
+                  <div class="row">
+                        <canvas id="bar" class="chart chart-bar" chart-colors="colors"
+                        chart-data="data4" chart-labels="labels4"> chart-series="series"
+                        </canvas>
+                     </div> 
+              </div>
+              <div class="swiper-slide items">
+                <div class="title-category1 slidernew">This Week</div>
+                <div class="row">  
+                     <div class="col"> 
+                      <div class="subtitle">Average Daily Steps</div>
+                      
+                     </div> 
+                     <div class="col">
+                       <div class="count-slider">40</div>    
+                     </div>
+                </div>     
+                <div class="row">
+                  <canvas id="bar" class="chart chart-bar" chart-data="data7" chart-colors="colors" chart-labels="labels7"> chart-series="series"></canvas>
+                </div>
+              </div> 
+          </div> 
+          <div class="swiper-pagination"></div>          
+       </div>
+       </div>
+       <!-- <div class="greybox"></div>   -->
+        <div >
+         <div class="notificationsection">Last 5 Notifications</div>
+         <div class="list othereditlinks">
+            <div class="list">
+                 <a class="item item-icon-left " href="#">
+                    <i class="icon ion-ios-bell  "></i>
+                    Notifaication of new Updates 
+                 </a>
+                 <a class="item item-icon-left " href="#">
+                    <i class="icon ion-ios-bell"></i>
+                    Notifaication of new Updates 
+                 </a>
+                 <a class="item item-icon-left " href="#">
+                    <i class="icon ion-ios-bell"></i>
+                    Notifaication of new Updates 
+                 </a>
+                 <!-- <a class="item item-icon-left " href="#">
+                    <i class="icon ion-ios-bell  wow shake ringbells" data-wow-iteration="infinite" data-wow-duration="3500ms"></i>
+                    Notifaication of new Updates 
+                 </a>
+                 <a class="item item-icon-left " href="#">
+                    <i class="icon ion-ios-bell  wow shake ringbells" data-wow-iteration="infinite" data-wow-duration="3500ms"></i>
+                    Notifaication of new Updates 
+                 </a> -->
+
+            </div>
+         </div>
+         </div>
+
+       <!-- <div class="greybox"></div>  
+       <div class="list othereditlinks1" style="    margin-bottom: 40px;">
+          <a class="item item-icon-left item-icon-right" ui-sref="app.editprofile">
+            <i class="icon ion-person-add left"></i>
+            Edit Profile
+            <i class="icon ion-chevron-right right"></i>
+          </a>
+           <a class="item item-icon-left item-icon-right" ui-sref="app.goals">
+            <i class="icon ion-chatbubble-working left"></i>
+              Set Your Goals
+            <i class="icon ion-chevron-right right"></i>
+          </a>
+       </div> -->
+       <style type="text/css">.swiper-container {
+    height: 300px;
+}      </style>
+    </ion-content>
+      <ion-footer-bar align-title="left" class="footernew">
+      <a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Profile
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter"  ui-sref="app.goals">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>

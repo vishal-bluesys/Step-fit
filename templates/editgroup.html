@@ -1,0 +1,67 @@
+<ion-view view-title="Edit Group" ng-controller="EditgroupCtrl">
+    <ion-content class="creategrouppage-container">
+       
+    <div class="coverpic" style="    background: url(./img/AppFirstpage01.png); background-size: 100%;background-repeat: no-repeat;">
+      <div class="uploadprofilepic aftergroupcreated" style="background:url({{group_data.img_path}});padding:0;background-size: cover; margin-top: 17px;"></div>
+       <div class="grouprankingdetail"><span>Rank </span>1</div>
+       <!--<div class="editprofilelink">12210 Steps</div>-->
+     
+    <div class="viewprofile-detailsnewchange" style="width: 100%;">
+          <div class="viewprofile-detailsnewchange-name">{{group_data.grp_name}}</div>
+          <div class="viewprofile-detailsnewchange-decribtion">{{group_data.short_desc}}</div>
+      </div>
+    </div>
+	<form name="editgroup" ng-submit="editgroupsubmit()" novalidate>
+      <div class="list" style="margin-top: 10px;">
+	  
+			<label class="item item-input borderinput">
+			  <span class="input-label">Group Name</span>
+			  <input type="text" name="groupname" ng-model="user.groupname" placeholder="Need To Run" / required>
+			  <div ng-messages="editgroup.groupname.$error" ng-show="editgroup.groupname.$touched">
+						<p class="validation_msg"ng-message="required">please enter your group name.</p>
+				</div>
+			</label>
+	
+        <div class="greybox"></div>
+        <textarea class="textarea" name="description1" ng-model="user.description1" placeholder="Group is full of energatic members we all have more active on this app"></textarea>
+		<div ng-messages="editgroup.description1.$error" ng-show="editgroup.description1.$touched">
+			<p class="validation_msg"ng-message="required">This field id required.</p>
+		</div>
+        <div class="greybox"></div>
+        <div class="orangebutton" ui-sref="app.addmembers">
+          Edit members
+        </div>
+
+        <div class="orangebutton" ui-sref="app.grouplist" style="maargin-top:10px;">
+          Update group
+        </div>
+      </div>
+	</form>
+    </ion-content>
+   <!--  <ion-footer-bar align-title="left" class="footernew">
+      <a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Me
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <i class="icon ion-gear-a"></i>
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar> -->
+</ion-view>

@@ -1,0 +1,154 @@
+<ion-view view-title="Activity" align-title="left">
+    <ion-content class="newactivity">
+    <p style="display:none">{{loadfunc()}}</p>
+       <!-- <div class="dashboardheader row">
+            <div class="col col-50">
+                <onezone-datepicker datepicker-object="onezoneDatepicker">
+                    <div  class="show-onezone-datepicker">
+                                {{onezoneDatepicker.date | date:'dd MMMM '}} <i class="icon ion-arrow-down-b"></i>
+                    </div>
+                </onezone-datepicker>
+            </div>
+            
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col headericon wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"><i class="icon ion-android-textsms hearticon"></i></div>
+       </div> -->
+	  <!--  <div ng-click = "showData()">
+		Click to see logs
+	   </div> -->
+      
+     <div class="newactivity-main">
+      <div class="playicon-center">
+          <div class="playicon"  ng-click="activity.showme=true" ng-hide="activity.showme" ng-show="!activity.showme">
+            <i class="icon ion-play mainplay"  ng-click="startActivity()"></i>
+            <div class="playdescribtion">Click Play to start the activity</div>  
+          </div>
+          <div ng-class="activity.playicon"  ng-show="activity.showme" ng-hide="!activity.showme">
+            <i class="icon ion-stop mainplay" ng-click="stopActivity()" ng-show="activity.stop"></i>
+            <div class="playdescribtion" ng-show="activity.stop">Click Stop the activity</div>  
+			<div class="orangebutton" ng-click="saveActivity()" ng-hide="activity.stop" style="width: 240px;border: 1px solid white;background: white;color: #f27f20;">
+			Stop and Save activity
+			</div>
+			<div class="orangebutton" ng-click="exitActivity()" ng-hide="activity.stop" style="width: 240px;border: 1px solid white;background: white;color: #f27f20;">
+			  Exit without saving activity
+			</div>
+          </div>
+      </div> 
+     </div>
+     <div class="activityhistory" ng-hide="activity.showme">
+        <div class="titlenewprofile" style="background:#944130;">Last 30 Days Activity</div>
+        <div class="list" >
+           <a class="item item-icon-left" ng-repeat="activity in activityList" href="#" ng-click="activity.isShow = !activity.isShow">
+            <img src="img/timer.png" class="activiylistimage"/>
+            <b>Date :</b>{{activity.activity_date}} 
+            <span class="item-note">
+             <b>Total Time :</b> {{activity.total_time}}
+            </span>
+            <div class="addintionalinfo" ng-show="activity.isShow">
+                <div class="infodetailactivity">
+                  <span>Steps :</span> {{activity.steps}}
+                </div>
+                <div class="infodetailactivity">
+                  <span>Distance :</span> {{activity.distance}} Km
+                </div>
+                <div class="infodetailactivity">
+                  <span>Calories :</span> {{activity.calories}} 
+                </div>
+                <div class="infodetailactivity">
+                  <span>Pace :</span> {{activity.pace}} Km/hr
+                </div>
+            </div>
+          </a>
+     </div>
+     </div>
+     <div class="newactivitydata" ng-show="activity.showme" ng-hide="!activity.showme">
+        <div class="activitytimer">
+		
+		<div class="activitytimer">
+          <div class="timer">{{timerUp}}</div>
+        </div>
+          <div class="clock" style="display:none;margin:2em;"></div>
+		  <div class="message" style="display:none;"></div>
+        </div>
+        <div class="row" style="padding:0">
+          <div class="col col-50" style="border-right: 1px solid #d4d4d4;">
+             <div class="newactivityicons">
+                <img src="img/steps.png" >
+             </div> 
+            <div class="activityrightnewsection">
+              <div class="title-category1new">Steps</div>
+             <!-- <div class="score textorange counter">900</div> -->
+              <div class="scorenew textgreennew ">{{activity.stepCount}}</div>
+            </div>
+          </div>
+          <div class="col col-50">
+             <div class="newactivityicons">
+                <img src="img/distance.png" >
+             </div> 
+            <div class="activityrightnewsection">
+              <div class="title-category1new">Distance</div>
+             <!-- <div class="score textorange counter">900</div> -->
+              <div class="scorenew textgreennew ">{{activity.distance}} KM</div>
+            </div>
+          </div>
+        </div> 
+        <div class="row" style="padding:0">
+          <div class="col col-50" style="border-right: 1px solid #d4d4d4;" >
+             <div class="newactivityicons">
+                <img src="img/calories.png" >
+             </div> 
+            <div class="activityrightnewsection">
+              <div class="title-category1new">Calories</div>
+             <!-- <div class="score textorange counter">900</div> -->
+              <div class="scorenew textgreennew ">{{activity.calories}}</div>
+            </div>
+          </div>
+          <div class="col col-50">
+             <div class="newactivityicons">
+                <img src="img/pace.png" >
+             </div> 
+            <div class="activityrightnewsection">
+              <div class="title-category1new">Pace</div>
+             <!-- <div class="score textorange counter">900</div> -->
+              <div class="scorenew textgreennew ">{{activity.pace}} Kmph</div>
+            </div>
+          </div>
+        </div>  
+      </div> 
+    </ion-content>
+    <ion-footer-bar align-title="left" class="footernew" ng-hide="activity.showme">
+      <!--<a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Me
+      </a>-->
+	  <a ui-sref="app.viewprofile" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Profile
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter"  ui-sref="app.goals">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>

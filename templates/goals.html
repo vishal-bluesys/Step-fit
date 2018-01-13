@@ -1,0 +1,101 @@
+<ion-view view-title="Goals" align-title="left" ng-controller="GoalsCtrl">
+    <ion-content >
+    <!-- <p style="display:none">{{loadfunc()}}</p> -->
+      <div class="newdashboard2-main2"> 
+       <div class="dashboardheader row">
+            <div class="col col-50">
+               <div class="header-text">Goals</div>
+            </div>
+            <!-- <div class="col"></div> -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col headericon wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"  ui-sref="app.notificationlist"><i class="icon ion-android-textsms hearticon"></i></div>
+            <!-- <div class="col headericon"><i class="icon ion-ios-settings-strong" ng-click="openPopover()"></i></div> -->
+       </div>
+       <!-- <div class="goalspagetitle title-category1" style="text-align:center;">Goals Strength</div>
+       <div class="goalsrow row goalslevel1">
+            <div class="col col-33 goalleft" style="padding: 15px 0;">
+                
+            </div>
+            <div class="col col-33"><div class="pipe"></div></div>
+            <div class="col col-33 goalright" style="padding: 28px 0 21px">
+                Goal 1
+            </div>
+       </div>
+       <div class="goalsrow row goalslevel2">
+            <div class="col col-33 goalleft" style="padding: 28px 0 21px;">
+                Goal 2
+            </div>
+            <div class="col col-33"><div class="pipe"></div></div>
+            <div class="col col-33 goalright" style="padding: 15px 0;">
+                
+            </div>
+       </div>
+       <div class="goalsrow row goalslevel3">
+            <div class="col col-33 goalleft" style="padding: 15px 0;">
+                
+            </div>
+            <div class="col col-33"><div class="pipe"></div></div>
+            <div class="col col-33 goalright" style="padding: 28px 0 21px;">
+                Goal 3
+            </div>
+       </div>
+       <div class="goalsrow row goalslevel4">
+            <div class="col col-33 goalleft" style="padding: 28px 0 21px;">
+                Goal 4
+            </div>
+            <div class="col col-33"><div class="pipe"></div></div>
+            <div class="col col-33 goalright" style="padding: 28px 0 21px;">
+                
+            </div>
+       </div>
+       <div class="goalsrow row goalslevel5">
+            <div class="col col-33 goalleft" style="padding: 15px 0;">
+                
+            </div>
+            <div class="col col-33"><div class="pipe"></div></div>
+            <div class="col col-33 goalright" style="padding: 28px 0 21px;">
+                Goal 5
+            </div>
+       </div> -->
+       <!--  <div class="goalpageslider row"> -->
+            <!-- <rzslider rz-slider-model="verticalSlider6.value" rz-slider-options="verticalSlider6.options"></rzslider> -->
+        <!-- </div>   -->  
+        <div class="goaltitle">World health organization recommends to exercise<br>for 40 minutes (walk for 8000 steps)</div>
+      </div>  
+        <div class="scrollergoal"></div>
+        <!--<div class="stepscenter">Steps</div>-->
+        <div class="submitbuttongoal" ng-click="setGoal()">GO</div>
+        {{loadComplete()}}
+    </ion-content>
+    <ion-footer-bar align-title="left" class="footernew">
+      <a ui-sref="app.viewprofile" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Profile
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter" ui-sref="app.goals">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>   

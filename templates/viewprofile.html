@@ -1,0 +1,94 @@
+<ion-view view-title="View Profile" ng-controller="ViewprofileCtrl">
+    <ion-content class="creategrouppage-container">
+       
+    <div class="coverpic" style="background:url(./img/AppFirstpage01.png);background-size: 100%;background-repeat: no-repeat;">
+      <div class="uploadprofilepic" style="padding:0;background-size: cover; margin-top: 16px;"> <img id="imageonload" ng-src="{{user.img_path == '' ? './img/profile.JPG' : user.img_path}}" /></div>
+	 
+      <div class="viewprofile-detailsnewchange">
+          <div class="viewprofile-detailsnewchange-name">{{user.first_name}} {{user.last_name}}</div>
+          <div class="viewprofile-detailsnewchange-decribtion">{{user.short_desc}}</div>
+          <div class="viewprofile-detailsnewchange-email"><i class="icon ion-email"></i>{{user.email}}</div>
+          <div class="viewprofile-detailsnewchange-phone"><i class="icon ion-android-phone-portrait"></i>{{user.phone_no}}</div>
+      </div>
+		<div class="viewprofilenewbuttonlogout" ng-click="logout()">Logout</div>
+	   <div class="viewprofilenewbuttonedit" ui-sref="app.changepassword">Edit Password</div>
+      <div class="viewprofilenewbuttoneditpassword" ui-sref="app.editprofile">Edit Info</div>
+    </div>
+      <div class="list" style="margin: 30px 0 ;">
+        <!-- <label class="item item-input borderinput">
+          <span class="input-label">Username</span>
+          <input type="text" placeholder="Username" ng-model="user.username" disabled/>
+        </label>
+		<label class="item item-input borderinput">
+          <span class="input-label">First Name</span>
+          <input type="text" ng-model="user.first_name" disabled/>
+        </label>
+		<label class="item item-input borderinput">
+          <span class="input-label">Last Name</span>
+          <input type="text" ng-model="user.last_name" disabled/>
+        </label>
+        <label class="item item-input borderinput">
+          <span class="input-label">Email Id</span>
+          <input type="text" ng-model="user.email" disabled/>
+        </label>
+        <label class="item item-input borderinput">
+          <span class="input-label">Phone no.</span>
+          <input type="text" ng-model="user.phone_no" disabled/>
+        </label> -->
+		<label class="item item-input borderinput">
+          <span class="input-label">Gender</span>
+          <input type="text" ng-model="user.gender" disabled/>
+        </label>
+		<label class="item item-input borderinput">
+          <span class="input-label">Age</span>
+          <input type="text" placeholder="Age" name="age" ng-model="user.age" disabled/>
+        </label>
+		<label class="item item-input borderinput">
+          <span class="input-label">Height (cm)</span>
+          <input type="text" placeholder="Height in cm" name="height" ng-model="user.height" disabled/>
+        </label>
+		<label class="item item-input borderinput">
+          <span class="input-label">Weight</span>
+          <input type="text" placeholder="Weight" name="weight" ng-model="user.weight" disabled/>
+        </label>
+       <!-- <label class="item item-input borderinput">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="*********" disabled/>
+        </label>-->
+       <!--  <div class="greybox"></div>
+        <textarea class="textarea" placeholder="I have added My describtion here and i can edit if from above button" disabled></textarea>
+      </div> -->
+</div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="footernew">
+      <!--<a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Me
+      </a>-->
+	  <a ui-sref="app.viewprofile" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Profile
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter"  ui-sref="app.goals">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>

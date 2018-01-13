@@ -1,0 +1,12 @@
+<ion-view view-title="Notification List" ng-controller="NotificationlistCtrl">
+    <ion-content>
+        <div class="list" ng-repeat="notificationdatas in notificationdata | orderBy : '-date' ">
+            <a class="item item-avatar">
+              <img src="img/logo-icon.jpg">
+              <!-- <div class="achivement">10K</div> -->
+              <p>{{notificationdatas.text}}</p>
+              <p>{{notificationdatas.date}}</p>
+            </a>           
+        </div>
+</ion-content>
+</ion-view>

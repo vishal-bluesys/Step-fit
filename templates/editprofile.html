@@ -1,0 +1,126 @@
+<ion-view view-title="Edit Account" ng-controller="EditprofileCtrl">
+    <ion-content class="creategrouppage-container">
+       
+    <div class="coverpic" style="    background: url(./img/AppFirstpage01.png); background-size: 100%;background-repeat: no-repeat;">
+      	  <div class="uploadprofilepic" ng-click="selectPic()" style="padding:0;background-size: cover; margin-top: 16px;"> <img ng-src="{{user.img_path == '' ? './img/profile.JPG' : user.img_path}}"  /></div>
+      <div class="viewprofile-detailsnewchange">
+          <div class="viewprofile-detailsnewchange-name">{{user.username}}</div>
+          <div class="viewprofile-detailsnewchange-decribtion">{{user.short_desc}}</div>
+          <div class="viewprofile-detailsnewchange-email"><i class="icon ion-email"></i>{{user.email}}</div>
+          <div class="viewprofile-detailsnewchange-phone"><i class="icon ion-android-phone-portrait"></i>{{user.phone_no}}</div>
+      </div>
+      <!-- <div class="coverpicupload">Change</div> -->
+    </div>
+	<form name="editform" novalidate>
+		  <p class="message-box" ng-bind-html="validationError"></p>
+      <div class="list" style="margin-top: 30px;">
+        <label class="item item-input borderinput">
+          <span class="input-label">Username</span>
+          <input readonly type="text" class="name"  name="username" placeholder="Add Profile" ng-model="user.username" required/>
+        </label>
+				<div ng-messages="editform.username.$error" ng-show="editform.username.$dirty">
+						<p class="validation_msg"ng-message="required">Username is required.</p>
+				</div>
+        <label class="item item-input borderinput">
+          <span class="input-label">First Name</span>
+          <input type="text" placeholder="First Name" name="firstname" ng-model="user.first_name" required/>
+        </label>
+				 <div ng-messages="editform.firstname.$error" ng-show="editform.firstname.$dirty">
+						<p class="validation_msg"ng-message="required"> First name is required.</p>
+	  
+				</div>
+		<label class="item item-input borderinput">
+          <span class="input-label">Last Name</span>
+          <input type="text" placeholder="Last Name" name="lastname" ng-model="user.last_name" required/>
+        </label>
+		<div ng-messages="editform.lastname.$error" ng-show="editform.lastname.$dirty">
+						<p class="validation_msg"ng-message="required"> lastname is required.</p>
+	  
+				</div>
+		<label class="item item-input borderinput">
+          <span class="input-label">Email Id</span>
+          <input type="email" placeholder="Email" name="email"  ng-model="user.email" required/>
+        </label>
+		<div ng-messages="editform.email.$error" ng-show="editform.email.$dirty">
+						<p class="validation_msg"ng-message="required">Your email is required.</p>
+						<div class="validation_msg" ng-message="email">Your email address is invalid</div>
+				</div>
+        <label class="item item-input borderinput">
+          <span class="input-label">Phone no.</span>
+          <input type="number" placeholder="Phone" name="phone" ng-model="user.phone_no" required/>
+        </label>
+
+    <div ng-messages="editform.phone.$error" ng-show="editform.phone.$dirty">
+            <p class="validation_msg" ng-message="required">Your phone number is required.</p>
+    </div>
+		 <label class="item item-input borderinput">
+          <span class="input-label">Gender</span>
+		<ion-list style="width: 139px;" name="selectgender">
+		  <ion-radio ng-model="user.gender" ng-value="'Male'">Male</ion-radio>
+		  <ion-radio ng-model="user.gender" ng-value="'Female'">Female</ion-radio>
+		</ion-list>
+		</label>
+    <div ng-messages="editform.selectgender.$error" ng-show="editform.selectgender.$dirty">
+            <p class="validation_msg"ng-message="required">This field is required.</p>
+        </div>
+		<label class="item item-input borderinput">
+          <span class="input-label">Age</span>
+          <input type="number" placeholder="Age" name="age" ng-model="user.age" required/>
+        </label>
+          <div ng-messages="editform.age.$error" ng-show="editform.age.$dirty">
+            <p class="validation_msg"ng-message="required">Your age is required.</p>
+        </div>
+		<label class="item item-input borderinput">
+          <span class="input-label">Height (cm)</span>
+          <input type="number" placeholder="Height in cm" name="height" ng-model="user.height" required/>
+        </label>
+        <div ng-messages="editform.height.$error" ng-show="editform.height.$dirty">
+            <p class="validation_msg"ng-message="required">Your height is required.</p>
+        </div>
+		<label class="item item-input borderinput">
+          <span class="input-label">Weight</span>
+          <input type="number" placeholder="Weight" name="weight" ng-model="user.weight" required/>
+        </label>
+        <div ng-messages="editform.weight.$error" ng-show="editform.weight.$dirty">
+            <p class="validation_msg"ng-message="required">Your weight is required.</p>
+        </div>
+		
+        <div class="greybox"></div>
+        <textarea class="textarea" name="description" placeholder="Enter Short Description" ng-model="user.short_desc"></textarea>
+			 <!-- <div ng-messages="editform.description.$error" ng-show="editform.description.$dirty">
+				<p class="validation_msg"ng-message="required">Your description is required.</p>
+			</div> -->
+        <div class="greybox"></div>
+        <div class="orangebutton" ng-click="save_profile(editform)">
+          Done
+        </div>
+      </div>
+
+    </ion-content>
+    <!-- <ion-footer-bar align-title="left" class="footernew">
+      <a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Me
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <i class="icon ion-gear-a"></i>
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar> -->
+</ion-view>

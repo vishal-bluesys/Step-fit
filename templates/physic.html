@@ -1,0 +1,68 @@
+<ion-view view-title="Add Your Details">
+    <ion-content class="creategrouppage-container">
+       <div class="headerphysic">Some Details</div>
+      <div class="list" style="margin-top: 40px;">
+        <label class="item item-input borderinput">
+          <span class="input-label">Height(feet)</span>
+          <input type="number" placeholder="5.1" />
+        </label>
+        <label class="item item-input borderinput">
+          <span class="input-label">Weight(Kg)</span>
+          <input type="number" placeholder="68 Kg" />
+        </label>
+        <label class="item item-input borderinput">
+          <span class="input-label">Age</span>
+          <input type="number" placeholder="26 yrs" />
+        </label>
+        <ion-list>
+          <ion-radio ng-model="choice" ng-value="'A'">Male </ion-radio>
+          <ion-radio ng-model="choice" ng-value="'B'">Female</ion-radio>
+        </ion-list>
+
+        <div class="greybox"></div>
+          <p class="padding" style="margin:0px;">Above Details are to calculate your calories so we can give you proper analysis on your calories </p>
+          <p class="padding">If you skip this step we cannot give you the proper calories analysis</p>
+        </div>
+        <!-- <div class="greybox"></div>
+        <div class="orangebutton">
+          Done
+        </div> -->
+      </div>
+
+    </ion-content>
+     <ion-footer-bar align-title="left" class="footernew">
+        <div class="row" style="padding:0px;">
+           <div class="col footerpart" ui-sref="app.dashboard"> 
+              Skip
+           </div>
+           <div class="col footerpart" ui-sref="app.dashboard">
+              Enter
+           </div>   
+    </ion-footer-bar>
+    <!-- <ion-footer-bar align-title="left" class="footernew">
+      <a ui-sref="app.me" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Me
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <i class="icon ion-gear-a"></i>
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar> -->
+</ion-view>

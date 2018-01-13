@@ -1,0 +1,144 @@
+<ion-view view-title="Trends" ng-controller="TrendsCtrl">
+    <ion-content class="trends-container newdashboard2-main22">
+   
+      <div class="dashboardheader row">
+            <div class="col col-50">
+                <div class="header-text">Trend</div>
+            </div>
+            <!-- <div class="col"></div> -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col headericon wow pulse" data-wow-iteration="infinite" data-wow-duration="500ms"  ui-sref="app.notificationlist"><i class="icon ion-android-textsms hearticon"></i>
+              <div class="notificationcount">{{notificationcount.countnot}}</div></div>
+            <!-- <div class="col headericon"><i class="icon ion-ios-settings-strong"></i></div> -->
+       </div>
+      <div id="tabs">
+		  <ul class="row">
+			<li class="title-category11 col trends-tabs"><a class="steps" href="#tabs-1" ng-click="stepstb1()">STEPS</a></li>
+			<li class="title-category11 col trends-tabs"><a class="steps" href="#tabs-2" ng-click="trendkmmonth()">KM</a></li>
+			<li class="title-category11 col trends-tabs"><a class="steps" href="#tabs-3" ng-click="trendcaloriesmonth()">CALORIES</a></li>
+		  </ul>
+
+		  <div id="tabs-1">
+				<div class="row">
+                  <!-- <div class="col durationsinterval">Yearly</div> -->
+                  <div class="col durationsinterval stepmonth activetrends" ng-click="trendstepmonth()">Monthly</div>
+                  <div class="col durationsinterval stepweekly" ng-click="trendstepweekly()">Weekly</div>
+                </div>
+				<div class="row trendsteps">
+                  <div class="col">
+                    <div class="title-category1" style="color: white;">Total </div>
+                    <div class="score trendscore score_trends">{{stepsd.stepsTotal}}</div>
+                  </div>
+                  <div class="col">
+                    <div class="title-category1" style="color: white;">Average</div>
+                    <div class="score trendscore score_trends">{{stepsd.stepsAvg}}</div>         
+                  </div>
+                 </div>
+                 <div style="background-color: #fff; padding-top: 10px;">
+			<canvas id="bar" class="chart chart-line stepschart1" chart-colors="colors1"
+			chart-data="data1" chart-labels="labels1"> chart-series="series"
+			</canvas>
+			<canvas id="bar" style="display:none;" class="chart chart-line stepschart2" chart-colors="colors1"
+			chart-data="data2" chart-labels="labels2"> chart-series="series"
+			</canvas>
+			<canvas id="bar" style="display:none;" class="chart chart-line stepschart3" chart-colors="colors1"
+			chart-data="data3" chart-labels="labels3"> chart-series="series"
+			</canvas>
+    </div>
+			<div class="row formulastext" ng-bind-html="showstepsformula"></div>
+		  </div>
+
+		  <div id="tabs-2">
+			<div class="row">
+                  <!-- <div class="col durationsinterval">Yearly</div> -->
+                  <div class="col durationsinterval kmmonth activetrends"  ng-click="trendkmmonth()">Monthly</div>
+                  <div class="col durationsinterval kmweekly" ng-click="trendkmweekly()">Weekly</div>
+                </div>
+				<div class="row kmbg">
+                  <div class="col">
+                    <div class="title-category1" style="color: white;">Total</div>
+                    <div class="score trendscore ">{{stepsd.kmTotal}}</div>
+                  </div>
+                  <div class="col">
+                    <div class="title-category1" style="color: white;">Average </div>
+                    <div class="score trendscore ">{{stepsd.kmAvg}}</div>         
+                  </div>
+                 </div>
+                 <div style="background-color: #fff; padding-top: 10px;">
+			<canvas id="bar" class="chart chart-line stepschart1" chart-colors="colors2"
+			chart-data="data4" chart-labels="labels1"> chart-series="series"
+			</canvas>
+			<canvas id="bar" style="display:none;" class="chart chart-line stepschart2" chart-colors="colors1"
+			chart-data="data5" chart-labels="labels2"> chart-series="series"
+			</canvas>
+			<canvas id="bar" style="display:none;" class="chart chart-line stepschart3" chart-colors="colors1"
+			chart-data="data6" chart-labels="labels3"> chart-series="series"
+			</canvas>
+    </div>
+        <div class="row formulastext" ng-bind-html="showkmformula"></div>
+		  </div>
+
+		  <div id="tabs-3">
+			<div class="row">
+                  <!-- <div class="col durationsinterval">Yearly</div> -->
+                  <div class="col durationsinterval caloriesmonth activetrends" ng-click="trendcaloriesmonth()">Monthly</div>
+                  <div class="col durationsinterval caloriesweekly" ng-click="trendcaloriesweekly()">Weekly</div>
+             </div>
+			 <div class="row caloriesbg">
+                  <div class="col">
+                    <div class="title-category1" style="color: white;">Total</div>
+                    <div class="score trendscore">{{stepsd.calTotal}}</div>
+                  </div>
+                  <div class="col">
+                    <div class="title-category1" style="color: white;">Average</div>
+                    <div class="score trendscore">{{stepsd.calAvg}}</div>         
+                  </div>
+                 </div>
+                 <div style="background-color: #fff; padding-top: 10px;">
+			<canvas id="bar" class="chart chart-line stepschart1" chart-colors="colors3"
+			chart-data="data7" chart-labels="labels1"> chart-series="series"
+			</canvas>
+			<canvas id="bar" style="display:none;" class="chart chart-line stepschart2" chart-colors="colors1"
+			chart-data="data8" chart-labels="labels2"> chart-series="series"
+			</canvas>
+			<canvas id="bar" style="display:none;" class="chart chart-line stepschart3" chart-colors="colors1"
+			chart-data="data9" chart-labels="labels3"> chart-series="series"
+			</canvas>
+    </div>
+      <div class="row formulastext" ng-bind-html="showcalformula"></div>
+		  </div>
+		</div>
+               
+    </ion-content>
+    <ion-footer-bar align-title="left" class="footernew">
+      <a ui-sref="app.viewprofile" class="tab-item listfooter">
+        <i class="icon ion-person"></i>
+        Profile
+      </a>
+      <a ui-sref="app.trends" class="tab-item listfooter">
+        <i class="icon ion-stats-bars"></i>
+        Trends
+      </a>
+      <div style="position: absolute; left: 50%;">
+        <a class="tab-item mainfooteritem" ui-sref="app.dashboard">
+          <!-- <i class="icon ion-gear-a"></i> -->
+          <img src="img/logo-icon.jpg">
+        </a>
+      </div>
+      <a class="tab-item listfooter">
+        <i class=""></i>
+      </a>
+      <a class="tab-item listfooter"  ui-sref="app.goals">
+        <i class="icon ion-checkmark-circled"></i>
+        Goals
+      </a>
+      <a ui-sref="app.grouplist" class="tab-item listfooter">
+        <i class="icon ion-person-stalker"></i>
+        Groups
+      </a>
+    </ion-footer-bar>
+</ion-view>

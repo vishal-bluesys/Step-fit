@@ -1,0 +1,42 @@
+<ion-view view-title="Add Members">
+    <ion-content class="grouplistpage-container">
+		
+        <div class="searchboar">
+              <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search Members By Name" ng-model="test">
+                </label>
+              </div>  
+        </div>
+		<p class="message-box" ng-bind-html="validationError"></p>
+		<div class="orangebutton" ng-click="createGroup()">
+          Save Group
+        </div>
+		<ion-scroll direction="x" >
+			<div class="addmembers-main" style="width:1100px;" > 
+				<div class="addmembers-contain" ng-repeat="user in usersList" style="width" ng-if="user.isChecked">
+					<i class="remove icon ion-close-circled" ng-click="user.isChecked =! user.isChecked"></i>
+					<img class="addmember-profile" ng-src="{{user.img_path == '' ? 'img/user.png' : user.img_path}}" />
+					<div class="addmember-name">{{user.first_name}} {{user.last_name}}</div>
+				</div>
+			</div>
+		</ion-scroll> 
+        <div class="list">
+            <div class="list" vs-repeat>
+            <a class="item item-avatar" ng-repeat="user in usersList | filter:test | limitTo:groupdata.limititem" on-finish-render>
+              <img ng-src="{{user.img_path == '' ? 'img/user.png' : user.img_path}}">
+              <h2>{{user.first_name}} {{user.last_name}}</h2>
+              <div class="member-container"> <label class="checkbox">
+        <input type="checkbox" ng-click="selectUser(user); $event.stopPropagation();" ng-model="user.isChecked" />
+     </label></div>
+            </a>
+        </div>
+        <div class="orangebutton" ng-click="hideloader()">
+    Load More
+        </div>
+        </div>
+ 
+    </ion-content>
+   
+</ion-view>
